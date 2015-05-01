@@ -14,11 +14,11 @@ public class listadoblecircular {
 		return primero==null;
 	}
 	
-	public listadoblecircular agregarfinal(int ele){
-		nododoblecircular nuevo = new nododoblecircular(ele);
+	public listadoblecircular agregarfinal(int elemento){
+		nododoblecircular nuevo = new nododoblecircular(elemento);
 		if(ultimo!=null){
-			nuevo.anterior=ultimo.anterior;
-			ultimo.anterior=nuevo;
+			nuevo.siguiente=ultimo.siguiente;
+			ultimo.siguiente=nuevo;
 	}
 			ultimo= nuevo;
 			return this;
@@ -47,12 +47,12 @@ public class listadoblecircular {
 	}
 	
 	public void mostrarfininicio(){
-		nododoblecircular auxilar= ultimo.siguiente;
+		nododoblecircular auxilar= primero.anterior;
 		String cadena="";
 		do{
 			cadena = cadena + "[" + auxilar.dato + "] -- ";
 			auxilar = auxilar.siguiente;
-		}while(auxilar!=ultimo.siguiente);
+		}while(auxilar!=primero.anterior);
 				JOptionPane.showMessageDialog(null, cadena, "Mostrando la lista doble circular", JOptionPane.INFORMATION_MESSAGE);
 	}
 	

@@ -50,8 +50,8 @@ public class menu {
 				}
 				
 			
-		}while(opcion!=4);
-		
+		}
+		while(opcion!=5);
 	}
 
 }
